@@ -24,6 +24,10 @@ with open("model.pkl", "rb") as f:
 
 app = FastAPI()
 
+@app.get("/")
+def root():
+    return {"message": "API is running"}
+
 @app.post("/predict")
 def predict(data: InputData):
     df = pd.DataFrame([data.dict()])
