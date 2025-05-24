@@ -4,7 +4,7 @@ from sklearn.ensemble import RandomForestClassifier
 import pickle
 
 # Load dataset
-data = pd.read_csv("winequality-red.csv")
+data = pd.read_csv("WineQT.csv")
 
 # Hapus kolom Id jika ada
 if "Id" in data.columns:
