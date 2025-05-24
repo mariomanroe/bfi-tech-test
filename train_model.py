@@ -5,6 +5,12 @@ import pickle
 
 # Load dataset
 data = pd.read_csv("winequality-red.csv")
+
+# Hapus kolom Id jika ada
+if "Id" in data.columns:
+    data = data.drop("Id", axis=1)
+
+# Split fitur dan target
 X = data.drop("quality", axis=1)
 y = data["quality"]
 
