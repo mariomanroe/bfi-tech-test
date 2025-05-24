@@ -3,3 +3,4 @@ uvicorn
 scikit-learn
 pandas
 pydantic
+prometheus_client
