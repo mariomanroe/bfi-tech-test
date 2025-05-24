@@ -4,8 +4,10 @@ import pickle
 import pandas as pd
 import logging
 
+# Logging
 logging.basicConfig(level=logging.INFO)
 
+# Definisikan format input
 class InputData(BaseModel):
     fixed_acidity: float
     volatile_acidity: float
@@ -19,9 +21,11 @@ class InputData(BaseModel):
     sulphates: float
     alcohol: float
 
+# Load model
 with open("model.pkl", "rb") as f:
     model = pickle.load(f)
 
+# Inisialisasi FastAPI
 app = FastAPI()
 
 @app.get("/")
@@ -31,9 +35,10 @@ def root():
 @app.post("/predict")
 def predict(data: InputData):
     try:
+        # Data input dari user (snake_case)
         df = pd.DataFrame([data.dict()])
 
-        # Rename kolom agar sesuai dengan nama fitur model
+        # Ubah nama kolom ke format saat training (pakai spasi)
         df.columns = [
             "fixed acidity",
             "volatile acidity",
@@ -48,9 +53,13 @@ def predict(data: InputData):
             "alcohol"
         ]
 
+        # Logging
         logging.info(f"Received data: {data.dict()}")
+
+        # Prediksi
         prediction = model.predict(df)[0]
         logging.info(f"Prediction result: {prediction}")
+
         return {"prediction": int(prediction)}
     except Exception as e:
         logging.error(f"Prediction failed: {e}")
