@@ -30,8 +30,12 @@ def root():
 
 @app.post("/predict")
 def predict(data: InputData):
-    df = pd.DataFrame([data.dict()])
-    logging.info(f"Received data: {data.dict()}")
-    prediction = model.predict(df)[0]
-    logging.info(f"Prediction result: {prediction}")
-    return {"prediction": int(prediction)}
+    try:
+        df = pd.DataFrame([data.dict()])
+        logging.info(f"Received data: {data.dict()}")
+        prediction = model.predict(df)[0]
+        logging.info(f"Prediction result: {prediction}")
+        return {"prediction": int(prediction)}
+    except Exception as e:
+        logging.error(f"Prediction failed: {e}")
+        return {"error": str(e)}
