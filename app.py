@@ -32,6 +32,22 @@ def root():
 def predict(data: InputData):
     try:
         df = pd.DataFrame([data.dict()])
+
+        # Rename kolom agar sesuai dengan nama fitur model
+        df.columns = [
+            "fixed acidity",
+            "volatile acidity",
+            "citric acid",
+            "residual sugar",
+            "chlorides",
+            "free sulfur dioxide",
+            "total sulfur dioxide",
+            "density",
+            "pH",
+            "sulphates",
+            "alcohol"
+        ]
+
         logging.info(f"Received data: {data.dict()}")
         prediction = model.predict(df)[0]
         logging.info(f"Prediction result: {prediction}")
