@@ -21,15 +21,15 @@ API ini memprediksi kualitas wine berdasarkan fitur-fitur kimiawi menggunakan mo
 
 ```
 .
-├── app.py                # FastAPI app untuk serving model
-├── train_model.py        # Script pelatihan model ML
-├── predict.py            # Fungsi prediksi standalone
-├── model.pkl             # Model ML yang telah dilatih
-├── requirements.txt      # Dependencies Python
-├── Dockerfile            # Konfigurasi Docker
-├── curl_test.sh          # Script curl untuk pengujian API
-├── README.md             # Dokumentasi proyek
-└── WineQT.csv            # Dataset (jika disertakan)
+├── app.py                
+├── train_model.py        
+├── predict.py            
+├── model.pkl             
+├── requirements.txt      
+├── Dockerfile            
+├── curl_test.sh          
+├── README.md             
+└── WineQT.csv            
 ```
 ---
 
