@@ -10,7 +10,8 @@ API ini memprediksi kualitas wine berdasarkan fitur-fitur kimiawi menggunakan mo
 - ⚙️ Model ML berbasis `RandomForestClassifier`
 - 🧪 Dibangun dengan **FastAPI**
 - 🐳 Dikemas dalam Docker container
-- 📦 Siap untuk di-deploy dan digunakan sebagai REST API
+- ☁️ Deployment menggunakan Railway
+- 📈 Monitoring dengan Prometheus & Grafana (di Play With Docker)
 
 ---
 
