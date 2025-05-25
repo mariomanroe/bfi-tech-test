@@ -6,7 +6,7 @@ API ini memprediksi kualitas wine berdasarkan fitur-fitur kimiawi menggunakan mo
 
 ## 🚀 Features
 
-- 🔮 Prediksi kualitas wine (skor 0–10) dari input data kimia
+- 🔮 Prediksi kualitas wine (skor 0–10)
 - ⚙️ Model ML berbasis `RandomForestClassifier`
 - 🧪 Dibangun dengan **FastAPI**
 - 🐳 Dikemas dalam Docker container
@@ -30,21 +30,16 @@ API ini memprediksi kualitas wine berdasarkan fitur-fitur kimiawi menggunakan mo
 ```
 ---
 
+
 ## ⚙️ Setup & Installation
 
-### 1. 🔧 Build Docker Image
+### 1. 🔧 Model Training & API Deployment (via Railway)
+1. Clone repositori ke Railway
+2. Jalankan `train_model.py` untuk membuat `model.pkl`
+3. Deploy FastAPI app dengan file `app.py`
+4. Pastikan port `8000` aktif
 
-```bash
-docker build -t wine-api .
-```
-
-### 2. ▶️ Run Docker Container
-
-```bash
-docker run -p 8000:8000 wine-api
-```
-
-### 3. 🧪 Test API Endpoint
+### 2. 🧪 Test API Endpoint
 
 Gunakan `curl_test.sh` atau langsung dengan `curl`:
 
@@ -108,6 +103,28 @@ POST /predict
 ```
 
 ---
+
+### 3. 🔧 Monitoring & Logging (via PWD - Play With Docker)
+1. Buka https://labs.play-with-docker.com/
+2. Buat 3 terminal instance: FastAPI app, Prometheus, dan Grafana
+3. Jalankan container dengan `docker-compose up`
+4. Akses Prometheus di `http://localhost:9090`, Grafana di `http://localhost:3000`
+
+---
+
+
+## 📊 Monitoring Dashboard
+
+Metode monitoring dilakukan dengan:
+
+- **Prometheus** untuk scraping metrik dari endpoint `/metrics`
+- **Grafana** untuk visualisasi
+- Metrik:
+  - `api_request_count_total` – Jumlah permintaan API
+  - `api_request_latency_seconds_bucket` – Latensi request API
+
+---
+
 
 ## 🧠 Model Information
 
