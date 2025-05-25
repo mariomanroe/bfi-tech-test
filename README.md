@@ -19,15 +19,17 @@ API ini memprediksi kualitas wine berdasarkan fitur-fitur kimiawi menggunakan mo
 
 ```
 .
-├── app.py                
-├── train_model.py        
-├── predict.py            
-├── model.pkl             
-├── requirements.txt      
-├── Dockerfile            
-├── curl_test.sh          
-├── README.md             
-└── WineQT.csv            
+├── app.py
+├── train_model.py
+├── predict.py
+├── model.pkl
+├── requirements.txt
+├── Dockerfile
+├── docker-compose.yml
+├── prometheus.yml
+├── curl_test.sh
+├── README.md
+└── WineQT.csv           
 ```
 ---
 
