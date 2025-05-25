@@ -1,4 +1,3 @@
-
 # **BFI Tech Test – Data Analytics Operation**
 
 API ini memprediksi kualitas wine berdasarkan fitur-fitur kimiawi menggunakan model *machine learning* yang telah dilatih.
