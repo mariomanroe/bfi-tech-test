@@ -137,18 +137,6 @@ pip install -r requirements.txt
 
 ---
 
-## 🛠️ Training Model (Opsional)
-
-Jika ingin melatih ulang model:
-
-```bash
-python train_model.py
-```
-
-File `model.pkl` akan diperbarui.
-
----
-
 ## 📬 Contact
 
 Jika ada pertanyaan terkait proyek ini, silakan hubungi melalui email atau buat issue di repositori ini.
