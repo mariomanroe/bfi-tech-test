@@ -145,6 +145,7 @@ Metode monitoring dilakukan dengan:
 - `scikit-learn`
 - `pandas`
 - `pydantic`
+- `prometheus_client`
 
 Instalasi manual (jika tidak pakai Docker):
 
